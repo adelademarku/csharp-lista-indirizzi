@@ -15,10 +15,13 @@ namespace ListaIndirizzi
         private string street;
         private string city;
         private string province;
-        private int zipcodes;
+        private string zipcodes;
 
-        public Indirizzo(string name, string surname, string street, string city, string province, int zipcodes)
+       
+        public Indirizzo(string name, string surname, string street, string city, string province, string zipcodes)
         {
+            
+
             this.name = name;
             this.surname = surname;
             this.street = street;
@@ -49,9 +52,32 @@ namespace ListaIndirizzi
         {
             return province;
         }
-        public int GetZipCodes()
+        public string GetZipCodes()
         {
             return zipcodes;
         }
+
+
+        public override string ToString()
+        {
+            return "Nome: " + this.name + "\tSurname: " + this.surname + "\tStreet: " + this.street + "\tCity: " + this.city+ "\tProvince: " + this.province+ "\tZip Codes: " + this.zipcodes;
+        }
+
+
+
+
+     /*   public void StampaIndirizzo()
+        {
+            Console.WriteLine("name: " + name);
+            Console.WriteLine("surname: " + surname);
+            Console.WriteLine("street: " + street);
+            Console.WriteLine("city: " + city);
+            Console.WriteLine("province: " + province);
+            Console.WriteLine("zip codes: " + zipcodes);
+        } */
+
+
+
+
     }
 }

@@ -19,14 +19,14 @@ try
         string riga = file.ReadLine();
 
 
-        string[] informazioniIndirizzo = riga.Split(", ");
+        string[] informazioniIndirizzo = riga.Split(",");
 
         string name = informazioniIndirizzo[0];
         string surname = informazioniIndirizzo[1];
         string street = informazioniIndirizzo[2];
         string city = informazioniIndirizzo[3];
         string province = informazioniIndirizzo[4];
-        int zipcodes = int.Parse(informazioniIndirizzo[5]);
+        string zipcodes =informazioniIndirizzo[5];
 
 
         Indirizzo indirizzo = new Indirizzo(name,surname,street,city,province,zipcodes);
@@ -36,9 +36,10 @@ try
 
     file.Close();
 }
-catch (Exception e)
+catch (IndirizzoException e)
 {
     Console.WriteLine(e.Message);
+    Console.WriteLine("c'è qualcosa che non va");
 }
 
 
